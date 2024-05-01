@@ -256,12 +256,6 @@ Once that's done visit localhost:\<port-number>/all_day in a browser to see the 
 
 Note for those using Git for Windows: it automatically expands any absolute paths it detects in your command. Use a double slash at the start to prevent this e.g. `//dont/expand/me`
 
-### 05: Refactor and improve!
-
-The Dockerfiles and bash script we've provided you aren't as good as they could be. Spend a little time trying to improve them before moving onto the next exercise.
-
-To get started, take a look at Docker's official [best practices guide for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
-
 ## Part 5: Docker Compose
 
 In the previous section we ended up constructing some reasonably long command line statements to build, configure and run our containers. This is error prone and doesn't scale well; consider how fiddly it was with just two containers!
@@ -378,3 +372,19 @@ You will need to:
 - Create a nginx config file and `COPY` it to the location in the container that nginx expects to find its config files
 - Configure nginx as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
 - Configure [rewrite rules](https://www.nginx.com/blog/creating-nginx-rewrite-rules/) in nginx
+
+
+## Part 9: Combining compose files (stretch)
+It's possible to extend and combine compose files to cover different use cases.
+
+Perhaps the simplest is to run `docker compose` with two files specified by the `-f` flag (which simply concatenates the services, volumes, networks etc. defined in the compose files).
+
+Another option is to use `extends` to build one service configuration on top of another.
+
+[You can find documentation for both techniques here](https://docs.docker.com/compose/multiple-compose-files/extends/).
+
+In the previous parts of the exercise we've defined two ways of sharing data between the cliapp/webapp:
+* Using a volume (be it a named volume or a bind mount)
+* Using a redis container
+
+For this exercise create a single compose file (say `docker-compose-base.yml`) for the common configuration and two more (one for each case in the list above) that builds upon this file in some way.
