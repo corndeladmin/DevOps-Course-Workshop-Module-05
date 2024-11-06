@@ -388,3 +388,25 @@ In the previous parts of the exercise we've defined two ways of sharing data bet
 * Using a redis container
 
 For this exercise create a single compose file (say `docker-compose-base.yml`) for the common configuration and two more (one for each case in the list above) that builds upon this file in some way.
+
+## Part 10: Creating dev containers (stretch)
+We've seen how the use of containers enables production environments to be spun up quickly and reliably. 
+They can also be used to bring the same benefits to your development environments!
+When you're developing, you often need different things installed and running on your machine than in a production environment. For example, everyone in the team may need certain extensions for VS Code, or other debugging tools. 
+Dev containers are a technology that help all developers on a team spin up the same consistent set of tooling with the same configuration, quickly and reliably.
+You can read more about it [here](https://code.visualstudio.com/docs/devcontainers/containers).
+
+### 01: Trying out dev containers for the first time
+If you haven't used a dev container before, try following this tutorial to see what they're about: https://code.visualstudio.com/docs/devcontainers/tutorial
+
+https://github.com/microsoft/vscode-remote-try-python
+
+EXAMPLE PYTHON WEBAPP CODEBASE & EXAMPLE DEV CONTAINER CONFIG
+
+### 02: Build a dev container for Chimera Python
+- heres a repo
+- you know how to use python
+- be able to dev in it from a VM that has docker but not python
+
+(supply link to chimera python repo)
+convert https://github.com/corndeladmin/DevOps-Course-Workshop-04-05-Tutors
