@@ -399,14 +399,29 @@ You can read more about it [here](https://code.visualstudio.com/docs/devcontaine
 ### 01: Trying out dev containers for the first time
 If you haven't used a dev container before, try following this tutorial to see what they're about: https://code.visualstudio.com/docs/devcontainers/tutorial
 
-https://github.com/microsoft/vscode-remote-try-python
-
-EXAMPLE PYTHON WEBAPP CODEBASE & EXAMPLE DEV CONTAINER CONFIG
+When you reach "Get the sample" step, you'll be instructed to choose a sample dev container to try out. We suggest trying out the Python one! It will have this URL: https://github.com/microsoft/vscode-remote-try-python
 
 ### 02: Build a dev container for Chimera Python
+You've now seen a dev container in action - let's try building one for ourselves.
+
+Here (qq supply link) is a repo for a Python version of Chimera. Your goal is to create a dev container that allows you to both run the Chimera application, and also debug it.
+
+Use the Visual Studio Code documentation to create a dev container that successfully runs your application. The Chimera application will require Python 3.12 in order to successfully run. 
+
+The application
+
+
 - heres a repo
 - you know how to use python
 - be able to dev in it from a VM that has docker but not python
 
-(supply link to chimera python repo)
+(qq: create chimera in python, 3.12, use types? and supply link to chimera python repo)
 convert https://github.com/corndeladmin/DevOps-Course-Workshop-04-05-Tutors
+
+### 03: Link your dev container to other services/containers using compose
+Now that you have a dev container that can run both the webapp (and maybe the cliapp), but let's link it up to the other containers running in our original compose file (cliapp, nginx & redis).
+
+Follow the instructions below to create a development compose file that builds on your original compose file:
+https://code.visualstudio.com/docs/devcontainers/create-dev-container#_extend-your-docker-compose-file-for-development
+
+After following the instructions in the link, refer to this new compose file in your `devcontainer.json` file.
